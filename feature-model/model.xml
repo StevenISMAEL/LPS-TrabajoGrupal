@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and mandatory="true" name="SistemaClinico">
+			<and mandatory="true" name="Acceso">
+				<feature mandatory="true" name="Autenticacion"/>
+				<feature mandatory="true" name="Roles"/>
+				<feature name="DobleFactorAuth"/>
+			</and>
+			<and mandatory="true" name="Pacientes">
+				<feature mandatory="true" name="RegistroPaciente"/>
+				<feature name="HistorialAlergias"/>
+				<feature name="TutorLegal"/>
+			</and>
+			<and mandatory="true" name="Agenda">
+				<feature mandatory="true" name="Calendario"/>
+				<feature mandatory="true" name="RecordatoriosCita"/>
+				<feature name="AgendaOnline"/>
+			</and>
+			<and mandatory="true" name="HistoriaClinica">
+				<feature mandatory="true" name="Prescripcion"/>
+				<feature name="EscalasEvaluacion"/>
+				<alt mandatory="true" name="FormularioClinico">
+					<feature name="HistoriaGeneral"/>
+					<feature name="Odontograma"/>
+					<feature name="NotaSOAP"/>
+					<feature name="CurvaCrecimiento"/>
+				</alt>
+			</and>
+			<and mandatory="true" name="Facturacion">
+				<feature mandatory="true" name="FacturaSRI"/>
+				<alt mandatory="true" name="Tarifacion">
+					<feature name="PorConsulta"/>
+					<feature name="PorSesion"/>
+					<feature name="PorProcedimientoDental"/>
+					<feature name="PorControlPediatrico"/>
+				</alt>
+				<feature name="IntegracionAseguradora"/>
+			</and>
+			<or mandatory="true" name="Notificacion">
+				<feature name="SMS"/>
+				<feature name="Email"/>
+				<feature name="WhatsApp"/>
+			</or>
+			<and mandatory="true" name="Reporteria">
+				<feature mandatory="true" name="DashboardOperativo"/>
+				<or mandatory="true" name="ReporteRegulatorio">
+					<feature name="MSPEstandar"/>
+					<feature name="FormularioMSP025"/>
+					<feature name="ReporteRDACAA"/>
+				</or>
+			</and>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>TutorLegal</var>
+				<var>RegistroPaciente</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>CurvaCrecimiento</var>
+				<var>TutorLegal</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>IntegracionAseguradora</var>
+				<var>FacturaSRI</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>NotaSOAP</var>
+				<not>
+					<var>PorProcedimientoDental</var>
+				</not>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>EscalasEvaluacion</var>
+				<disj>
+					<var>NotaSOAP</var>
+					<var>CurvaCrecimiento</var>
+				</disj>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>

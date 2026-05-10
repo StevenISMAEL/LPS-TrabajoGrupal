@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+	<feature automatic="selected" name="SistemaClinico"/>
+	<feature automatic="selected" name="Acceso"/>
+	<feature automatic="selected" name="Autenticacion"/>
+	<feature automatic="selected" name="Roles"/>
+	<feature name="DobleFactorAuth"/>
+	<feature automatic="selected" name="Pacientes"/>
+	<feature automatic="selected" name="RegistroPaciente"/>
+	<feature manual="selected" name="HistorialAlergias"/>
+	<feature name="TutorLegal"/>
+	<feature automatic="selected" name="Agenda"/>
+	<feature automatic="selected" name="Calendario"/>
+	<feature automatic="selected" name="RecordatoriosCita"/>
+	<feature manual="selected" name="AgendaOnline"/>
+	<feature automatic="selected" name="HistoriaClinica"/>
+	<feature automatic="selected" name="Prescripcion"/>
+	<feature name="EscalasEvaluacion"/>
+	<feature automatic="selected" name="FormularioClinico"/>
+	<feature manual="selected" name="HistoriaGeneral"/>
+	<feature automatic="unselected" name="Odontograma"/>
+	<feature automatic="unselected" name="NotaSOAP"/>
+	<feature automatic="unselected" name="CurvaCrecimiento"/>
+	<feature automatic="selected" name="Facturacion"/>
+	<feature automatic="selected" name="FacturaSRI"/>
+	<feature automatic="selected" name="Tarifacion"/>
+	<feature manual="selected" name="PorConsulta"/>
+	<feature automatic="unselected" name="PorSesion"/>
+	<feature automatic="unselected" name="PorProcedimientoDental"/>
+	<feature automatic="unselected" name="PorControlPediatrico"/>
+	<feature manual="selected" name="IntegracionAseguradora"/>
+	<feature automatic="selected" name="Notificacion"/>
+	<feature manual="selected" name="SMS"/>
+	<feature manual="selected" name="Email"/>
+	<feature name="WhatsApp"/>
+	<feature automatic="selected" name="Reporteria"/>
+	<feature automatic="selected" name="DashboardOperativo"/>
+	<feature automatic="selected" name="ReporteRegulatorio"/>
+	<feature manual="selected" name="MSPEstandar"/>
+	<feature name="FormularioMSP025"/>
+	<feature name="ReporteRDACAA"/>
+</configuration>
