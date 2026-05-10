@@ -29,7 +29,8 @@ El repositorio está organizado según los artefactos clave del ciclo de vida de
 
 ---
 **Autores:**
-* Lara Cruz, Steven Ismael
-* *[Añade a tus compañeros aquí si es un trabajo grupal]*
+* Lara Cruz Steven Ismael
+* Sergio Pazmiño *
+* Michael Serrano *
 
 *Desarrollado como proyecto integrador de Arquitectura y Líneas de Productos de Software - 2026.*
